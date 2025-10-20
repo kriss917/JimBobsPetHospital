@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: kriss917
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: root
+    password: password
+    url: jdbc:postgresql://localhost:5432/petHospital
+  jpa:
+    generate-ddl: false
+    show-sql: true
+
