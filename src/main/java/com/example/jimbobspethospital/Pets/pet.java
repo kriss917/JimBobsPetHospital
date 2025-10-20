@@ -2,7 +2,11 @@ package com.example.jimbobspethospital.Pets;
 
 import com.example.jimbobspethospital.Owner.Owner;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class pet {
 
@@ -27,30 +31,5 @@ public class pet {
 
     public pet() {
 
-    }
-
-
-    public String getPet_name() {
-        return pet_name;
-    }
-
-    public void setPet_name(String pet_name) {
-        this.pet_name = pet_name;
-    }
-
-    public String getPet_type() {
-        return pet_type;
-    }
-
-    public void setPet_type(String pet_type) {
-        this.pet_type = pet_type;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
     }
 }
