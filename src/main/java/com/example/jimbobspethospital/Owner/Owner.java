@@ -4,10 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import org.springframework.stereotype.Service;
 
 @Entity
-public class owner {
+public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,13 +17,13 @@ public class owner {
     private String address;
 
 
-    public owner(String email, String name, String address) {
+    public Owner(String email, String name, String address) {
         this.email = email;
         this.name = name;
         this.address = address;
     }
 
-    public owner() {}
+    public Owner() {}
 
     public Long getOwner_id() {
         return owner_id;
@@ -58,3 +57,4 @@ public class owner {
         this.address = address;
     }
 }
+

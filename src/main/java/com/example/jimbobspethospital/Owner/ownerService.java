@@ -1,6 +1,5 @@
 package com.example.jimbobspethospital.Owner;
 
-import com.example.jimbobspethospital.Pets.petService;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,5 +9,9 @@ public class ownerService {
 
     public ownerService(ownerRepo ownerRepo) {
         this.ownerRepo = ownerRepo;
+    }
+
+    public Owner createOwner(Owner theOwner) {
+        return ownerRepo.save(theOwner);
     }
 }
