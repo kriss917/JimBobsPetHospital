@@ -8,6 +8,7 @@ import com.github.javafaker.Faker;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class CreateTestData {
@@ -40,7 +41,8 @@ public class CreateTestData {
             return;
         }
         for (int i = 0; i < 50; i++) {
-            Owner randomOwner = owners.get(2);
+            int randomOwnerNumber = new Random().nextInt(owners.size());
+            Owner randomOwner = owners.get(randomOwnerNumber);
             Pet newPet = new Pet(
                     randomOwner,
                     faker.name().firstName(),
