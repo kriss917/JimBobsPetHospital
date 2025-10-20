@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class owner {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long owner_id;

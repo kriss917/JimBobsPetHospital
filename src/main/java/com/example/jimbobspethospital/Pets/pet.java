@@ -25,6 +25,10 @@ public class pet {
         this.age = age;
     }
 
+    public pet() {
+
+    }
+
     public String getPet_name() {
         return pet_name;
     }
