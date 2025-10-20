@@ -19,4 +19,7 @@ public class ownerService {
     public List<Owner> getAllOwners() {
         return ownerRepo.findAll();
     }
+    public Owner getOwnerById(Long id) {
+        return ownerRepo.findById(id).orElse(null);
+    }
 }

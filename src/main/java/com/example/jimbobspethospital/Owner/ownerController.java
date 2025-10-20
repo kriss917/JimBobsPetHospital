@@ -2,9 +2,7 @@ package com.example.jimbobspethospital.Owner;
 
 import com.example.jimbobspethospital.TestData.CreateTestData;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +28,15 @@ public class ownerController {
     public ResponseEntity<String> initOwners(){
         createTestData.createOwnerData();
         return ResponseEntity.ok("ok");
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Owner> getOwnerById(@PathVariable Long id){
+        return ResponseEntity.ok(ownerService.getOwnerById(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteOwnerById(@PathVariable Long id){
+        return ResponseEntity.ok("deleted owner: "+ id);
     }
 }
