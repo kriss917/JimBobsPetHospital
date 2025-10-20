@@ -1,9 +1,7 @@
 package com.example.jimbobspethospital.Pets;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.jimbobspethospital.Owner.owner;
+import jakarta.persistence.*;
 
 @Entity
 public class pet {
@@ -11,14 +9,16 @@ public class pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long pet_id;
-    private long owner_id;
+
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+     private owner owner_id;
 
     private String pet_name;
     private String pet_type;
     private String age;
 
-    public pet(long pet_id, long owner_id, String pet_name, String pet_type, String age) {
-        this.pet_id = pet_id;
+    public pet(owner owner_id, String pet_name, String pet_type, String age) {
         this.owner_id = owner_id;
         this.pet_name = pet_name;
         this.pet_type = pet_type;
@@ -28,6 +28,7 @@ public class pet {
     public pet() {
 
     }
+
 
     public String getPet_name() {
         return pet_name;
