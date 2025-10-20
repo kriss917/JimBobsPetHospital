@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class pet {
+public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,14 +22,16 @@ public class pet {
     private String pet_type;
     private String age;
 
-    public pet(Owner owner_id, String pet_name, String pet_type, String age) {
+    public Pet(Owner owner_id, String pet_name, String pet_type, String age) {
         this.owner_id = owner_id;
         this.pet_name = pet_name;
         this.pet_type = pet_type;
         this.age = age;
     }
 
-    public pet() {
+    public Pet() {
 
     }
+
+
 }
