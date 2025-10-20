@@ -8,5 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class petController {
 
     private final petService petService;
-    private final
+
+    public petController(com.example.jimbobspethospital.Pets.petService petService) {
+        this.petService = petService;
+    }
+
+
 }
