@@ -8,7 +8,7 @@ public class pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long pet_id;
+    private Long pet_id;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
