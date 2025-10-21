@@ -17,11 +17,16 @@ public class petService {
     public Pet createPet(Pet thePet) {
         return petRepository.save(thePet);
     }
+
     public List<Pet> getAllPet() {
         return petRepository.findAll();
     }
 
     public Pet getPetById(Long id) {
         return petRepository.findById(id).orElse(null);
+    }
+
+    public void deletePetById(Long id) {
+        petRepository.deleteById(id);
     }
 }

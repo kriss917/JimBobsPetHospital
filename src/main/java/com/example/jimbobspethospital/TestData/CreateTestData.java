@@ -52,4 +52,19 @@ public class CreateTestData {
             petService.createPet(newPet);
         }
     }
+    public void createOwnerPetData(){
+        createOwnerData();
+        List<Owner> owners = ownerService.getAllOwners();
+        for (int i = 0; i < 50; i++) {
+            int randomOwnerIndex = new Random().nextInt(owners.size());
+            Owner randomOwner = owners.get(randomOwnerIndex);
+            Pet newPet = new Pet(
+                    randomOwner,
+                    faker.name().firstName(),
+                    faker.animal().name(),
+                    String.valueOf(faker.number().numberBetween(1, 15))
+            );
+            petService.createPet(newPet);
+        }
+    }
 }

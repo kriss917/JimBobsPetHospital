@@ -3,10 +3,7 @@ package com.example.jimbobspethospital.Pets;
 import com.example.jimbobspethospital.Owner.Owner;
 import com.example.jimbobspethospital.TestData.CreateTestData;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,5 +34,16 @@ public class petController {
     public ResponseEntity<String> init() {
         createTestData.createPetData();
         return ResponseEntity.ok("ok");
+    }
+
+    @GetMapping("/init/all")
+    public ResponseEntity<String> initAll() {
+        createTestData.createOwnerPetData();
+        return ResponseEntity.ok("ok");
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletePetById(@PathVariable Long id) {
+        petService.deletePetById(id);
+        return ResponseEntity.ok("ok, deleted pet with id " + id);
     }
 }
