@@ -3,10 +3,12 @@ package com.example.jimbobspethospital.Pets;
 import com.example.jimbobspethospital.Owner.Owner;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 public class Pet {
 
@@ -28,10 +30,4 @@ public class Pet {
         this.pet_type = pet_type;
         this.age = age;
     }
-
-    public Pet() {
-
-    }
-
-
 }

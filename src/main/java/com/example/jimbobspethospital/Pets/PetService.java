@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class petService {
+public class PetService {
 
-    private final petRepo petRepository;
+    private final PetRepo petRepository;
 
-    public petService(petRepo petRepository) {
+    public PetService(PetRepo petRepository) {
         this.petRepository = petRepository;
     }
 

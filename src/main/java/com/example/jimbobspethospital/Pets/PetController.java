@@ -1,6 +1,5 @@
 package com.example.jimbobspethospital.Pets;
 
-import com.example.jimbobspethospital.Owner.Owner;
 import com.example.jimbobspethospital.TestData.CreateTestData;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,13 +8,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/pet")
-public class petController {
+public class PetController {
 
 
-    private final petService petService;
+    private final PetService petService;
     private final CreateTestData createTestData;
 
-    public petController(petService petService, CreateTestData createTestData) {
+    public PetController(PetService petService, CreateTestData createTestData) {
         this.petService = petService;
         this.createTestData = createTestData;
     }

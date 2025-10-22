@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ownerService {
+public class OwnerService {
 
-    private final ownerRepo ownerRepo;
+    private final OwnerRepo ownerRepo;
 
-    public ownerService(ownerRepo ownerRepo) {
+    public OwnerService(OwnerRepo ownerRepo) {
         this.ownerRepo = ownerRepo;
     }
 

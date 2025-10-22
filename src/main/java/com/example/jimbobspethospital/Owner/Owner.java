@@ -1,19 +1,19 @@
 package com.example.jimbobspethospital.Owner;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
+@NoArgsConstructor
 @Entity
 public class Owner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "owner_id")
     private Long owner_id;
 
     private String email;
@@ -26,8 +26,5 @@ public class Owner {
         this.name = name;
         this.address = address;
     }
-
-    public Owner() {}
-
-}
+    }
 

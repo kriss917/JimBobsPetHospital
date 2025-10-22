@@ -8,13 +8,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/owner")
-public class ownerController {
+public class OwnerController {
 
     private final CreateTestData createTestData;
 
-    private final ownerService ownerService;
+    private final OwnerService ownerService;
 
-    public ownerController(CreateTestData createTestData, ownerService ownerService) {
+    public OwnerController(CreateTestData createTestData, OwnerService ownerService) {
         this.createTestData = createTestData;
         this.ownerService = ownerService;
     }

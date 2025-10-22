@@ -1,9 +1,9 @@
 package com.example.jimbobspethospital.TestData;
 
 import com.example.jimbobspethospital.Owner.Owner;
-import com.example.jimbobspethospital.Owner.ownerService;
+import com.example.jimbobspethospital.Owner.OwnerService;
 import com.example.jimbobspethospital.Pets.Pet;
-import com.example.jimbobspethospital.Pets.petService;
+import com.example.jimbobspethospital.Pets.PetService;
 import com.github.javafaker.Faker;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +14,10 @@ import java.util.Random;
 public class CreateTestData {
 
     private final Faker faker;
-    private final ownerService ownerService;
-    private final com.example.jimbobspethospital.Pets.petService petService;
+    private final OwnerService ownerService;
+    private final PetService petService;
 
-    public CreateTestData(ownerService ownerService, petService petService) {
+    public CreateTestData(OwnerService ownerService, PetService petService) {
         this.faker = new Faker() ;
         this.ownerService = ownerService;
         this.petService = petService;
