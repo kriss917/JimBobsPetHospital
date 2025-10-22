@@ -15,17 +15,22 @@ public class Staff {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long staff_id;
 
-    private String name;
-    private String position;
-    private String email;
+    @Column(name = "staff_name")
+    private String staff_name;
+
+    @Column(name = "staff_position")
+    private String staff_position;
+
+    @Column(name = "staff_email")
+    private String staff_email;
 
     // @JoinColumn(name = "treatment_id")
     private Long treatment_id;
 
-    public Staff(String name, String position, String email, Long treatment_id) {
-        this.name = name;
-        this.position = position;
-        this.email = email;
+    public Staff(String staff_name, String staff_position, String staff_email, Long treatment_id) {
+        this.staff_name = staff_name;
+        this.staff_position = staff_position;
+        this.staff_email = staff_email;
         this.treatment_id = treatment_id;
     }
 }
