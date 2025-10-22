@@ -36,4 +36,13 @@ public class StaffController {
         staffService.deleteStaffById(id);
         return ResponseEntity.ok("Staff deleted");
     }
+    @DeleteMapping("/all")
+    public ResponseEntity<String> deleteAllStaff() {
+        staffService.deleteAllStaff();
+        return ResponseEntity.ok("Staff deleted");
+    }
+    @PostMapping
+    public ResponseEntity<Staff> saveStaff(@RequestBody Staff staff) {
+        return  ResponseEntity.ok(staffService.createStaff(staff));
+    }
 }
