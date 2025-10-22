@@ -24,14 +24,14 @@ public class Staff {
     @Column(name = "staff_email")
     private String staff_email;
 
-    // @JoinColumn(name = "treatment_id")
-    private Long treatment_id;
+    @JoinColumn(name = "treatment_id")
+    private Long treatment_type_id;
 
-    public Staff(String staff_name, String staff_position, String staff_email, Long treatment_id) {
+    public Staff(String staff_name, String staff_position, String staff_email, Long treatment_type_id) {
         this.staff_name = staff_name;
         this.staff_position = staff_position;
         this.staff_email = staff_email;
-        this.treatment_id = treatment_id;
+        this.treatment_type_id = treatment_type_id;
     }
 }
 
