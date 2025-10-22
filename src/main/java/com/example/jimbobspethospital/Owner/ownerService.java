@@ -14,7 +14,8 @@ public class ownerService {
     }
 
     public Owner createOwner(Owner theOwner) {
-        return ownerRepo.save(theOwner);
+       return ownerRepo.save(theOwner);
+
     }
     public List<Owner> getAllOwners() {
         return ownerRepo.findAll();
@@ -22,4 +23,11 @@ public class ownerService {
     public Owner getOwnerById(Long id) {
         return ownerRepo.findById(id).orElse(null);
     }
+    public void deleteOwnerById(Long id) {
+        ownerRepo.deleteById(id);
+    }
+    public void deleteAllOwners() {
+        ownerRepo.deleteAll();
+    }
+
 }

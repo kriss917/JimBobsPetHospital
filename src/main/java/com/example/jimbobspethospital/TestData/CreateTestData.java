@@ -34,24 +34,6 @@ public class CreateTestData {
         }
     }
 
-    public void createPetData(){
-        List<Owner> owners = ownerService.getAllOwners();
-        if (owners.isEmpty()){
-            System.out.println("No owners found");
-            return;
-        }
-        for (int i = 0; i < 50; i++) {
-            int randomOwnerNumber = new Random().nextInt(owners.size());
-            Owner randomOwner = owners.get(randomOwnerNumber);
-            Pet newPet = new Pet(
-                    randomOwner,
-                    faker.name().firstName(),
-                    faker.animal().name(),
-                    String.valueOf(faker.number().numberBetween(1, 15))
-            );
-            petService.createPet(newPet);
-        }
-    }
     public void createOwnerPetData(){
         createOwnerData();
         List<Owner> owners = ownerService.getAllOwners();
@@ -62,7 +44,7 @@ public class CreateTestData {
                     randomOwner,
                     faker.name().firstName(),
                     faker.animal().name(),
-                    String.valueOf(faker.number().numberBetween(1, 15))
+                    faker.number().numberBetween(1L, 15L)
             );
             petService.createPet(newPet);
         }

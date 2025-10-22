@@ -19,15 +19,15 @@ public class ownerController {
         this.ownerService = ownerService;
     }
 
-    @GetMapping()
-    public ResponseEntity<List<Owner>> getOwner() {
-        return ResponseEntity.ok(ownerService.getAllOwners());
-    }
-
     @GetMapping("/init")
     public ResponseEntity<String> initOwners(){
         createTestData.createOwnerData();
         return ResponseEntity.ok("ok");
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<Owner>> getAllOwners() {
+        return ResponseEntity.ok(ownerService.getAllOwners());
     }
 
     @GetMapping("/{id}")
@@ -37,6 +37,18 @@ public class ownerController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteOwnerById(@PathVariable Long id){
+        ownerService.deleteOwnerById(id);
         return ResponseEntity.ok("deleted owner: "+ id);
+    }
+    @DeleteMapping("/all")
+    public ResponseEntity<String> deleteAllOwners(){
+        ownerService.deleteAllOwners();
+        return ResponseEntity.ok("Deleted all current owners");
+    }
+
+    @PostMapping
+    public ResponseEntity<Owner> createOwner(@RequestBody Owner owner){
+      Owner lastOwnerCreated = ownerService.createOwner(owner);
+        return ResponseEntity.ok(lastOwnerCreated);
     }
 }

@@ -22,7 +22,6 @@ public class petController {
     @GetMapping
     public ResponseEntity<List<Pet>> getAllOwners() {
         return ResponseEntity.ok(petService.getAllPet());
-
     }
 
     @GetMapping("/{id}")
@@ -32,15 +31,10 @@ public class petController {
 
     @GetMapping("/init")
     public ResponseEntity<String> init() {
-        createTestData.createPetData();
-        return ResponseEntity.ok("ok");
-    }
-
-    @GetMapping("/init/all")
-    public ResponseEntity<String> initAll() {
         createTestData.createOwnerPetData();
         return ResponseEntity.ok("ok");
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletePetById(@PathVariable Long id) {
         petService.deletePetById(id);

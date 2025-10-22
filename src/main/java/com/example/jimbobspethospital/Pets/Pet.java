@@ -20,9 +20,9 @@ public class Pet {
 
     private String pet_name;
     private String pet_type;
-    private String age;
+    private Long age;
 
-    public Pet(Owner owner_id, String pet_name, String pet_type, String age) {
+    public Pet(Owner owner_id, String pet_name, String pet_type, Long age) {
         this.owner_id = owner_id;
         this.pet_name = pet_name;
         this.pet_type = pet_type;
