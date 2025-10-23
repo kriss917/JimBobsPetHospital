@@ -1,5 +1,6 @@
 package com.example.jimbobspethospital.Staff;
 
+import com.example.jimbobspethospital.Treatment.Treatment;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,10 +25,11 @@ public class Staff {
     @Column(name = "staff_email")
     private String staff_email;
 
-    @JoinColumn(name = "treatment_id")
-    private Long treatment_type_id;
+    @ManyToOne
+    @JoinColumn(name = "treatment_type_id")
+    private Treatment treatment_type_id;
 
-    public Staff(String staff_name, String staff_position, String staff_email, Long treatment_type_id) {
+    public Staff(String staff_name, String staff_position, String staff_email, Treatment treatment_type_id) {
         this.staff_name = staff_name;
         this.staff_position = staff_position;
         this.staff_email = staff_email;

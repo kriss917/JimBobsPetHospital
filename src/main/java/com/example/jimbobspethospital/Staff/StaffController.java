@@ -21,10 +21,11 @@ public class StaffController {
     public ResponseEntity<List<Staff>> findAll() {
        return ResponseEntity.ok(staffService.getAllStaff());
     }
+
     @GetMapping("/init")
     public ResponseEntity<String> createStaff(Staff staff) {
-       createTestData.createStaff();
-       return ResponseEntity.ok("Created staff");
+       createTestData.createTreatmentStaffData();
+       return ResponseEntity.ok("Created staff and treatment");
 
     }
     @GetMapping("/{id}")
@@ -42,7 +43,7 @@ public class StaffController {
         return ResponseEntity.ok("Staff deleted");
     }
     @PostMapping
-    public ResponseEntity<Staff> saveStaff(@RequestBody Staff staff) {
+    public ResponseEntity<Staff> saveStaff(@RequestBody StaffDto staff) {
         return  ResponseEntity.ok(staffService.createStaff(staff));
     }
 }
